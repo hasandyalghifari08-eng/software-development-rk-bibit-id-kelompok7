@@ -1,0 +1,12 @@
+# Konfigurasi rahasia (berisi password database)
+config.php
+.env
+
+# Gambar yang diunggah admin
+uploads/*
+!uploads/.gitkeep
+
+# File sistem dan editor
+.DS_Store
+Thumbs.db
+.vscode/
