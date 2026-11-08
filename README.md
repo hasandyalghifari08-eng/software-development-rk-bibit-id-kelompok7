@@ -11,7 +11,7 @@ Website katalog digital bibit tanaman yang menampilkan jenis bibit, harga, dan k
 - Muhammad Sofyan Fauzi (2413020080) - Back-End Developer
 
 ## Teknologi
-- HTML, CSS, JavaScript
+- HTML, CSS, JavaScript, Bootstrap
 - PHP
 - MySQL
 
