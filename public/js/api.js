@@ -6,8 +6,10 @@ const EMO = { Buah: '🍊', Hias: '🪴', Bunga: '🌸', Sayur: '🥬' };
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rp = n => 'Rp' + Number(n).toLocaleString('id-ID');
 const ambil = u => fetch(u).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
-const getProduk = () => ambil(API.produk);
-const getToko = () => ambil(API.toko);
+const buka = j => { if (j && j.status === 'error') throw new Error(j.pesan); return j && j.status !== undefined ? j.data : j; };
+const norm = p => ({ ...p, id: p.id ?? p.id_bibit, kategori: p.kategori ?? p.nama_kategori, harga: Number(p.harga), stok: Number(p.stok) });
+const getProduk = () => ambil(API.produk).then(j => (buka(j) || []).map(norm));
+const getToko = () => ambil(API.toko).then(j => { const d = buka(j); return Array.isArray(d) ? d[0] : d; });
 const linkWa = (wa, pesan) => 'https://wa.me/' + wa + (pesan ? '?text=' + encodeURIComponent(pesan) : '');
 const fmtWa = wa => ('0' + String(wa).slice(2)).replace(/^(\d{4})(\d{4})(\d+)$/, '$1-$2-$3');
 
