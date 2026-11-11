@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Nov 2026 pada 08.05
+-- Waktu pembuatan: 11 Nov 2026 pada 14.26
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.1.25
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `password_hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `password_hash`) VALUES
+(1, 'admin', '$2y$10$7KaWrdhaCYUJZ2zVJq3PhOz3jiIKVijkKk/XkI4KQAhkuycTSAKHG');
+
 -- --------------------------------------------------------
 
 --
@@ -54,6 +61,16 @@ CREATE TABLE `bibit` (
   `gambar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `bibit`
+--
+
+INSERT INTO `bibit` (`id_bibit`, `id_kategori`, `nama`, `harga`, `stok`, `ringkas`, `deskripsi`, `cahaya`, `air`, `media`, `tinggi`, `gambar`) VALUES
+(1, 1, 'Bibit Kelengkeng Matalada', 50000, 18, 'Kelengkeng berbiji kecil & cepat berbuah', 'Varietas kelengkeng berbiji lada, kulit putih bening, manis dan aroma harum.', 'Matahari penuh 6-8 jam', '1 kali sehari', 'Tanah gembur + sekam', '40-50 cm', 'kelengkeng_matalada.jpg'),
+(2, 1, 'Bibit Mangga Kiojay', 55000, 20, 'Mangga jumbo manis dan renyah', 'Varietas mangga ukuran jumbo, daging tebal dan cocok untuk tabulampot.', 'Matahari penuh 6-8 jam', '1-2 kali sehari', 'Tanah gembur + kompos', '60-70 cm', 'mangga_kiojay.jpg'),
+(3, 1, 'Bibit Nangka Madu', 40000, 12, 'Nangka daging tebal manis legit', 'Bibit nangka madu genjah unggul dengan aroma khas madu.', 'Matahari penuh 6-8 jam', '1 kali sehari', 'Tanah gembur', '50-60 cm', 'nangka_madu.jpg'),
+(4, 1, 'Bibit Sawo Jumbo Vietnam', 45000, 15, 'Sawo ukuran besar & cepat berbuah', 'Varietas sawo asal Vietnam dengan ukuran buah besar dan rasa sangat manis.', 'Matahari penuh 6-8 jam', '1 kali sehari', 'Tanah gembur', '45-55 cm', 'sawo_vietnam.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -70,7 +87,10 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(1, 'Buah');
+(1, 'Buah'),
+(5, 'Hias'),
+(6, 'Bunga'),
+(7, 'Sayur');
 
 -- --------------------------------------------------------
 
@@ -133,19 +153,19 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `bibit`
 --
 ALTER TABLE `bibit`
-  MODIFY `id_bibit` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_bibit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `toko`
