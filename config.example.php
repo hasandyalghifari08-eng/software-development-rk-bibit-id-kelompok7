@@ -1,5 +1,14 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'rk_bibit_id');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "rk_bibit_id";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+$conn->set_charset("utf8mb4");
+?> 
