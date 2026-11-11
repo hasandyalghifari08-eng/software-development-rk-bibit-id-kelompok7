@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Katalog — RK Bibit ID</title>
-<meta name="description" content="RK Bibit ID: katalog bibit buah, hias, bunga, dan sayur. Lihat harga dan stok, pesan lewat WhatsApp, Shopee, atau TikTok Shop.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🌱%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script><script src="js/api.js" defer></script><script src="js/katalog.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Katalog — RK Bibit ID</title>
+    <meta name="description" content="RK Bibit ID: katalog bibit buah, hias, bunga, dan sayur. Lihat harga dan stok, pesan lewat WhatsApp, Shopee, atau TikTok Shop.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🌱%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/katalog.js" defer></script>
 </head>
 <body>
-<script src="js/layout.js" data-part="nav"></script>
-<section class="band"><div class="container py-4 d-flex justify-content-between align-items-center flex-wrap gap-3"><div><small>Koleksi RK Bibit ID</small><h1 class="h2 fw-bold mb-1">Katalog Bibit Tanaman</h1><p class="text-secondary mb-0">Bibit buah, hias, bunga, dan sayur yang siap tumbuh di halaman rumahmu.</p></div><div class="stat"><div><b id="stat-jenis">0</b><span>Jenis bibit</span></div><div><b id="stat-kat">0</b><span>Kategori</span></div></div></div></section>
-<section class="container py-4"><div class="row g-2 align-items-center mb-2"><div class="col-lg-5"><input type="search" class="form-control" id="cari" placeholder="Cari nama bibit" aria-label="Cari bibit"></div>
-<div class="col-lg-7"><div id="kategori-chip" class="d-flex flex-wrap gap-2"></div></div></div>
-<p class="small text-secondary" id="jumlah"></p>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="daftar-produk"><div class="col-12 text-center text-secondary py-5">Memuat bibit…</div></div></section>
-<script src="js/layout.js" data-part="foot"></script>
+    <script src="js/layout.js" data-part="nav"></script>
+    
+    <section class="band">
+        <div class="container py-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div>
+                <small>Koleksi RK Bibit ID</small>
+                <h1 class="h2 fw-bold mb-1">Katalog Bibit Tanaman</h1>
+                <p class="text-secondary mb-0">Bibit buah, hias, bunga, dan sayur yang siap tumbuh di halaman rumahmu.</p>
+            </div>
+            <div class="stat">
+                <div>
+                    <b id="stat-jenis">0</b>
+                    <span>Jenis bibit</span>
+                </div>
+                <div>
+                    <b id="stat-kat">0</b>
+                    <span>Kategori</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container py-4">
+        <div class="row g-2 align-items-center mb-2">
+            <div class="col-lg-5">
+                <input type="search" class="form-control" id="cari" placeholder="Cari nama bibit" aria-label="Cari bibit">
+            </div>
+            <div class="col-lg-7">
+                <div id="kategori-chip" class="d-flex flex-wrap gap-2"></div>
+            </div>
+        </div>
+        
+        <p class="small text-secondary" id="jumlah"></p>
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="daftar-produk">
+            <div class="col-12 text-center text-secondary py-5">Memuat bibit…</div>
+        </div>
+    </section>
+    
+    <script src="js/layout.js" data-part="foot"></script>
 </body>
 </html>
