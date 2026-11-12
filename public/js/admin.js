@@ -20,7 +20,7 @@
   if (fb) {
     const id = new URLSearchParams(location.search).get('id'), f = document.getElementById('gambar');
     if (id) try {
-      const p = (await getProduk()).find(x => String(x.id) === id);
+      const p = await getDetail(id);
       if (p) { isi(p); document.getElementById('id').value = p.id; document.getElementById('judul-form').textContent = 'Ubah Bibit'; document.title = 'Ubah Bibit — Admin RK Bibit ID'; }
     } catch (e) {}
     f.addEventListener('change', () => { if (f.files[0] && f.files[0].size > 200 * 1024) { alert('Ukuran gambar maksimal 200 KB.'); f.value = ''; } });

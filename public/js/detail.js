@@ -2,10 +2,10 @@
 (async function () {
   const root = document.getElementById('detail'); if (!root) return;
   const salah = m => { root.className = 'text-center py-5'; root.innerHTML = '<h2 class="h4 mb-3">' + m + '</h2><a class="btn btn-primary" href="katalog.html">Kembali ke katalog</a>'; };
-  let ps, t;
-  try { [ps, t] = await Promise.all([getProduk(), getToko()]); } catch (e) { return salah('Gagal memuat data bibit'); }
-  const p = ps.find(x => String(x.id) === new URLSearchParams(location.search).get('id'));
-  if (!p) return salah('Bibit tidak ditemukan');
+  const id = new URLSearchParams(location.search).get('id');
+  let p, t;
+  try { [p, t] = await Promise.all([getDetail(id), getToko()]); }
+  catch (e) { return salah(e.message === 'Bibit tidak ditemukan' ? 'Bibit tidak ditemukan' : 'Gagal memuat data bibit'); }
   document.title = p.nama + ' — RK Bibit ID';
   const h = p.stok < 1, ext = ' target="_blank" rel="noopener"', v = x => esc(x || '-');
   const tombol = h

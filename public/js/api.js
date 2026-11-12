@@ -1,7 +1,10 @@
 // Alamat folder public/ dihitung dari lokasi file ini, jadi aman dipakai dari halaman admin juga
 const BASE = document.currentScript.src.replace(/js\/api\.js.*$/, '');
-// Sumber data. Kalau BE sudah jadi, ganti ke endpoint PHP: BASE + 'api_bibit.php' dan BASE + 'api_toko.php'
-const API = { produk: BASE + 'data/produk.json', toko: BASE + 'data/toko.json' };
+// Ganti ke true kalau backend PHP sudah jalan (lewat XAMPP, bukan Live Server)
+const PAKAI_API = false;
+const API = PAKAI_API
+  ? { produk: BASE + 'api_bibit.php', toko: BASE + 'api_toko.php' }
+  : { produk: BASE + 'data/produk.json', toko: BASE + 'data/toko.json' };
 const EMO = { Buah: '🍊', Hias: '🪴', Bunga: '🌸', Sayur: '🥬' };
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rp = n => 'Rp' + Number(n).toLocaleString('id-ID');
@@ -10,6 +13,9 @@ const buka = j => { if (j && j.status === 'error') throw new Error(j.pesan); ret
 const norm = p => ({ ...p, id: p.id ?? p.id_bibit, kategori: p.kategori ?? p.nama_kategori, harga: Number(p.harga), stok: Number(p.stok) });
 const getProduk = () => ambil(API.produk).then(j => (buka(j) || []).map(norm));
 const getToko = () => ambil(API.toko).then(j => { const d = buka(j); return Array.isArray(d) ? d[0] : d; });
+const getDetail = id => PAKAI_API
+  ? ambil(BASE + 'api_detail_bibit.php?id=' + encodeURIComponent(id)).then(j => norm(buka(j)))
+  : getProduk().then(ps => { const p = ps.find(x => String(x.id) === String(id)); if (!p) throw new Error('Bibit tidak ditemukan'); return p; });
 const linkWa = (wa, pesan) => 'https://wa.me/' + wa + (pesan ? '?text=' + encodeURIComponent(pesan) : '');
 const fmtWa = wa => ('0' + String(wa).slice(2)).replace(/^(\d{4})(\d{4})(\d+)$/, '$1-$2-$3');
 
