@@ -1,8 +1,8 @@
 # Frontend Feature
 
-Nama: Haris
-Role: Front-End Developer
-Mata Kuliah: Software Development
+- Nama: Haris Ardian Ramadhana
+- Role: Front-End Developer
+- Mata Kuliah: Software Development
 
 ## Peran
 
