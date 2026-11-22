@@ -7,14 +7,14 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Tambah / Ubah Bibit — Admin RK Bibit ID</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🌱%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="../public/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/style.css">
-    <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-    <script src="../public/js/api.js" defer></script>
-    <script src="../public/js/admin.js" defer></script>
+    <link rel="stylesheet" href="../public/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/assets/style.css">
+    <script src="../public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../public/assets/js/api.js" defer></script>
+    <script src="../public/assets/js/admin.js" defer></script>
 </head>
 <body>
-    <script src="../public/js/layout.js" data-part="adminnav"></script>
+    <script src="../public/assets/js/layout.js" data-part="adminnav"></script>
     <main class="container py-4">
         <a class="d-inline-block small mb-2 text-decoration-none" href="admin.php">← Kembali ke daftar bibit</a>
 
