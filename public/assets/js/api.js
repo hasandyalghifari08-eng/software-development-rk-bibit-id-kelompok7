@@ -1,10 +1,10 @@
 // Alamat folder public/ dihitung dari lokasi file ini, jadi aman dipakai dari halaman admin juga
-const BASE = document.currentScript.src.replace(/js\/api\.js.*$/, '');
+const BASE = document.currentScript.src.replace(/assets\/js\/api\.js.*$/, '');
 // Ganti ke true kalau backend PHP sudah jalan (lewat XAMPP, bukan Live Server)
 const PAKAI_API = false;
 const API = PAKAI_API
   ? { produk: BASE + 'api_bibit.php', toko: BASE + 'api_toko.php' }
-  : { produk: BASE + 'data/produk.json', toko: BASE + 'data/toko.json' };
+  : { produk: BASE + 'assets/data/produk.json', toko: BASE + 'assets/data/toko.json' };
 const EMO = { Buah: '🍊', Hias: '🪴', Bunga: '🌸', Sayur: '🥬' };
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rp = n => 'Rp' + Number(n).toLocaleString('id-ID');
